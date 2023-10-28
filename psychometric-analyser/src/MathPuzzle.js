@@ -1,36 +1,36 @@
 import React, { Component } from 'react'
 
-export default class Psychometric extends Component {
+export default class MathPuzzle extends Component {
     render() {
         return (
             <div className='container container-fluid'>
-                <h3 className='display-4 fw-bold mt-5'>Psychometric Tests</h3>
+                <h3 className='display-4 fw-bold mt-5'>Math Puzzle</h3>
                 <hr />
-                
+
                 <div>
-                    <h5 className='fw-light mt-5 '>Q1. In social situations, do you typically take the lead in initiating conversations or prefer to be approached by others?</h5>
+                    <h5 className='fw-light mt-5'>
+                        Q1. Binary Conversion - Convert a binary number to decimal:
+                        <br />
+                        &emsp;&ensp;&nbsp;Puzzle : Convert "1101" to decimal.
+                    </h5>
                     <div className="form">
                         <textarea className="form-control" id="form4Example3" rows="4" style={{ "resize": "None" }}></textarea>
                     </div>
                 </div>
 
                 <div>
-                    <h5 className='fw-light mt-5'>Q2. How do you typically respond to rejection or failure in your work? Are you more likely to persist, adapt, and find alternative solutions, or do you tend to reevaluate your strategy and adjust your approach as needed?</h5>
+                    <h5 className='fw-light mt-5'>Q2. Complex Algebra: Solve for x in a complex algebraic equation:
+                        <br />
+                        &emsp;&ensp;&nbsp;Puzzle: Solve for x in the equation: 2x^2 - 5x + 3 = 0.</h5>
                     <div className="form mb-4">
                         <textarea className="form-control" id="form4Example3" rows="4" style={{ "resize": "None" }}></textarea>
                     </div>
                 </div>
 
                 <div>
-                    <h5 className='fw-light mt-5'>Q3. How do you stay inspired, organized, and creative in your work, even when faced with tight deadlines?</h5>
-                    <div className="form mb-4">
-                        <textarea className="form-control" id="form4Example3" rows="4" style={{ "resize": "None" }}></textarea>
-                    </div>
-                </div>
-
-
-                <div>
-                    <h5 className='fw-light mt-5'>Q4. How did you present a proposal or idea to a group? How did you ensure it was well-received?</h5>
+                    <h5 className='fw-light mt-5'>Q3. Prime Factorization: Find the prime factors of a large number:
+                        <br />
+                        &emsp;&ensp;&nbsp;Puzzle: Find the prime factors of 168.</h5>
                     <div className="form mb-4">
                         <textarea className="form-control" id="form4Example3" rows="4" style={{ "resize": "None" }}></textarea>
                     </div>
@@ -38,7 +38,19 @@ export default class Psychometric extends Component {
 
 
                 <div>
-                    <h5 className='fw-light mt-5'>Q5. How would you work with a cross-functional team to deliver a project or achieve a goal? How will you contribute to the team's success?</h5>
+                    <h5 className='fw-light mt-5'>Q4. Calculus Challenge: Calculate the derivative of a complex function:
+                        <br />
+                        &emsp;&ensp;&nbsp;Puzzle: Find the derivative of f(x) = 3x^4 - 6x^3 + 2x^2 - 8x + 1.</h5>
+                    <div className="form mb-4">
+                        <textarea className="form-control" id="form4Example3" rows="4" style={{ "resize": "None" }}></textarea>
+                    </div>
+                </div>
+
+
+                <div>
+                    <h5 className='fw-light mt-5'>Q5. Number Base Conversion: Convert a number from one base to another.
+                        <br />
+                        &emsp;&ensp;&nbsp;Puzzle: Convert the number "101011" from binary to its decimal equivalent.</h5>
                     <div className="form mb-4">
                         <textarea className="form-control" id="form4Example3" rows="4" style={{ "resize": "None" }}></textarea>
                     </div>

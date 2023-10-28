@@ -35,21 +35,24 @@ export default class Home extends PureComponent {
                 <div className='mt-5'>
                     <h2>Try it for yourself</h2>
 
-                    <form>
-                        <div className='row'>
+                    <div className="container">
+                        <form className="text-center">
+                            <div className="row justify-content-center">
 
-                            <div className='col-6'>
-                                <input type="url" id="typeURL" className="form-control" placeholder='LinkedIn profile link' />
+                                <div className="col-2">
+                                    <input type="url" id="typeURL1" className="form-control" placeholder="LinkedIn profile link" />
+                                </div>
+
+                                <div className="col-2">
+                                    <input type="url" id="typeURL2" className="form-control" placeholder="Twitter profile link" />
+                                </div>
+
                             </div>
 
-                            <div className='col-6'>
-                                <input type="url" id="typeURL" className="form-control" placeholder='Twitter profile link' />
-                            </div>
+                            <button className="btn btn-primary btn-rounded mt-3">Check</button>
+                        </form>
+                    </div>
 
-                        </div>
-
-                        <button className='btn btn-primary btn-rounded mt-3'>Check</button>
-                    </form>
 
 
                 </div>

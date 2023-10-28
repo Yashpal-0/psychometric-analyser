@@ -15,6 +15,8 @@ import {
 } from 'mdb-react-ui-kit';
 import Home from './Home';
 import Psychometric from './Psychometric';
+import WordPuzzle from './WordPuzzle';
+import MathPuzzle from './MathPuzzle';
 
 export default function App() {
   const [showNavColor, setShowNavColor] = useState(false);
@@ -108,6 +110,8 @@ const handleSubmit = (e) => {
       
       <Home/>
       <Psychometric/>
+      <WordPuzzle/>
+      <MathPuzzle/>
       </MDBContainer>
 
   </>

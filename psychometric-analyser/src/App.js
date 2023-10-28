@@ -13,6 +13,8 @@ import {
   MDBNavbarBrand,
   MDBCollapse
 } from 'mdb-react-ui-kit';
+import Home from './Home';
+import Psychometric from './Psychometric';
 
 export default function App() {
   const [showNavColor, setShowNavColor] = useState(false);
@@ -81,11 +83,11 @@ const handleSubmit = (e) => {
           </MDBCollapse>
         </MDBContainer>
       </MDBNavbar>
-      <div className='p-5 text-left bg-light'>
+      {/* <div className='p-5 text-left bg-light'>
         <h1 className='mb-0'>Psychometric Test</h1>
-      </div>
+      </div> */}
       <MDBContainer>
-      <form onSubmit={handleSubmit}>
+      {/* <form onSubmit={handleSubmit}>
         {questions.map((question) => (
           <div key={question.id}>
             <label>{question.text}</label>
@@ -101,7 +103,11 @@ const handleSubmit = (e) => {
           </div>
         ))}
         <button type="submit">Submit</button>
-      </form>
+      </form> */}
+
+      
+      <Home/>
+      <Psychometric/>
       </MDBContainer>
 
   </>

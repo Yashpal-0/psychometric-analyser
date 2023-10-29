@@ -7,25 +7,23 @@ export default function Home() {
     const [finalData, setFinalData] = useState({});
     const [response, setResponse] = useState({});
 
-  const handleChangeLinkedIn = async (e) => {
+  const handleChangeLinkedIn = (e) => {
     setFormData({ ...formData, linkedin: e.target.value });
   };
 
-    const handleChangeTwitter = async (e) => {
+    const handleChangeTwitter = (e) => {
      setFormData({ ...formData, twitter: e.target.value });
     };
 
-    // var isUrlValid = (e) => {
-    //     return /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/.test(e);
-    // }
-    const handleChange= async (e)
+    var isUrlValid = (e) => {
+        return /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/.test(e);
+    }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    handleChangeTwitter()
-    setFinalData(formData);
+    console.log(formData)
     
-    if(isUrlValid(finalData.linkedin) && isUrlValid(formData.twitter)){
+    if(isUrlValid(formData.linkedin) && isUrlValid(formData.twitter)){
         // console.log("Valid link");
         //send data to backend
         var url = "http://127.0.0.1:5000/";
@@ -38,7 +36,7 @@ export default function Home() {
         }).then(res =>  res.json()).then(data => setResponse(data)).catch(err => console.log(err))    ;
     }
     else{
-        console.log(finalData)
+        console.log()
         console.log("Invalid link");
     }
     //if form data is validd
@@ -85,11 +83,11 @@ export default function Home() {
                         <div className='row'>
 
                             <div className='col-6'>
-                                <input type="url" id="typeURL" className="form-control" placeholder='LinkedIn profile link' name="linkedin" onChange={handleChangeLinkedIn}/>
+                                <input type="url" id="typeURL" className="form-control" placeholder='LinkedIn profile link' name="linkedin" onChange={handleChangeLinkedIn} value={formData.linkedin}/>
                             </div>
 
                             <div className='col-6'>
-                                <input type="url" id="typeURL" className="form-control" placeholder='Twitter profile link' name = "twitter" onChange={handleChangeTwitter}/>
+                                <input type="url" id="typeURL" className="form-control" placeholder='Twitter profile link' name = "twitter" onChange={handleChangeTwitter} value={formData.twitter}/>
                             </div>
 
                         </div>

@@ -4,9 +4,8 @@ from flask_cors import CORS, cross_origin
 app =  Flask(__name__)
 CORS(app)
 
-firstData ={
-    "linkedin" : "",
-    "twitter": ""
+response ={
+    "message" : False,
 }
 # app.run(debug=True)
 @app.route('/', methods=['GET','POST'])

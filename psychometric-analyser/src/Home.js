@@ -1,8 +1,54 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent , useState } from 'react'
 import home2 from './home2.gif'
 
-export default class Home extends PureComponent {
-    render() {
+export default function Home() {
+
+    const [formData, setFormData] = useState({ linkedin : '', twitter : '' });
+    const [finalData, setFinalData] = useState({});
+    const [response, setResponse] = useState({});
+
+  const handleChangeLinkedIn = async (e) => {
+    setFormData({ ...formData, linkedin: e.target.value });
+  };
+
+    const handleChangeTwitter = async (e) => {
+     setFormData({ ...formData, twitter: e.target.value });
+    };
+
+    // var isUrlValid = (e) => {
+    //     return /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/.test(e);
+    // }
+    const handleChange= async (e)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    handleChangeTwitter()
+    setFinalData(formData);
+    
+    if(isUrlValid(finalData.linkedin) && isUrlValid(formData.twitter)){
+        // console.log("Valid link");
+        //send data to backend
+        var url = "http://127.0.0.1:5000/";
+        await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(finalData),
+        }).then(res =>  res.json()).then(data => setResponse(data)).catch(err => console.log(err))    ;
+    }
+    else{
+        console.log(finalData)
+        console.log("Invalid link");
+    }
+    //if form data is validd
+    //send data to backend
+    //else
+    //show error message
+
+    
+  };
+    
         return (
             <div className='container container-fluid mb-5'>
                 <h3 className='display-3 fw-bold mt-5'>Talent Insight Accelerator</h3>
@@ -35,20 +81,20 @@ export default class Home extends PureComponent {
                 <div className='mt-5'>
                     <h2>Try it for yourself</h2>
 
-                    <form>
+                    <form method="POST" onSubmit={handleSubmit}>
                         <div className='row'>
 
                             <div className='col-6'>
-                                <input type="url" id="typeURL" className="form-control" placeholder='LinkedIn profile link' />
+                                <input type="url" id="typeURL" className="form-control" placeholder='LinkedIn profile link' name="linkedin" onChange={handleChangeLinkedIn}/>
                             </div>
 
                             <div className='col-6'>
-                                <input type="url" id="typeURL" className="form-control" placeholder='Twitter profile link' />
+                                <input type="url" id="typeURL" className="form-control" placeholder='Twitter profile link' name = "twitter" onChange={handleChangeTwitter}/>
                             </div>
 
                         </div>
 
-                        <button className='btn btn-primary btn-rounded mt-3'>Check</button>
+                        <button className='btn btn-primary btn-rounded mt-3' type="submit">Check</button>
                     </form>
 
 
@@ -56,4 +102,4 @@ export default class Home extends PureComponent {
             </div>
         )
     }
-}
+

@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 export default class Psychometric extends Component {
     render() {
         return (
+            <div>
             <div className='container container-fluid'>
                 <h3 className='display-4 fw-bold mt-5'>Psychometric Tests</h3>
                 <hr />
@@ -47,6 +48,7 @@ export default class Psychometric extends Component {
 
 
             </div>
+        </div>
         )
     }
 }

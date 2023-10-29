@@ -1,15 +1,15 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
+
 app =  Flask(__name__)
+CORS(app)
 
-data ={
-    "message": "",
-    "question": ""
+firstData ={
+    "linkedin" : "",
+    "twitter": ""
 }
-
-@app.route('/')
+# app.run(debug=True)
+@app.route('/', methods=['GET','POST'])
 def hello():
-    return "<h1>Hello World!</h1>"
-
-@app.route('/quiz')
-def quiz():
-    return data
+    # print(request.get_json())
+    return request.get_json()

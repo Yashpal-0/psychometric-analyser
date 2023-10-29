@@ -17,12 +17,12 @@ response ={
 def hello():
     return request.get_json()
 
-@app.route('/get_linkedin_about', methods=['POST'])
+@app.route('/get_linkedin_about', methods=['GET','POST'])
 def get_linkedin_about():
     inputs = list(request.get_json().values())
     # about = run_linkedin_about(inputs[0])
     about = "I'm a passionate tech enthusiast who values sticking to my own path and principles, believing that they lead to genuine success in the world of technology. My approach is deeply rooted in my strong convictions, and I find that unwavering commitment to my own beliefs has consistently delivered results in my professional endeavors."
-    
+    print(inputs)
     run_linkedin_model(about)
     return request.get_json()
 

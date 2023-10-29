@@ -20,12 +20,12 @@ export default function App() {
             <Navbar />
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Home state />} />
+                    <Route path="/" element={<Home/>} />
                     <Route path="/psychometric" element={
                         <>
                             <Psychometric />
-                            <WordPuzzle />
-                            <MathPuzzle />
+                            {/* <WordPuzzle />
+                            <MathPuzzle /> */}
                         </>
                     } />
                     <Route path='/dummy' element={<h1>Dummy</h1>} />

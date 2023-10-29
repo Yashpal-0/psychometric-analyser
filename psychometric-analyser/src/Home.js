@@ -1,11 +1,14 @@
 import React, { PureComponent, useState } from 'react'
 import home2 from './home2.gif'
+import { useNavigate } from 'react-router-dom';
+
 
 export default function Home() {
-
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({ linkedin: '', twitter: '' });
     const [finalData, setFinalData] = useState({});
     const [response, setResponse] = useState({});
+    const [state, setState] = useState({ eligible: true});
 
     const handleChangeLinkedIn = (e) => {
         setFormData({ ...formData, linkedin: e.target.value });
@@ -21,7 +24,7 @@ export default function Home() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData)
+        // console.log(formData)
 
         if (isUrlValid(formData.linkedin) && isUrlValid(formData.twitter)) {
             // console.log("Valid link");

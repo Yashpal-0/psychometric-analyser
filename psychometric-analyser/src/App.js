@@ -9,8 +9,7 @@ import Footer from './Footer';
 
 export default function App() {
 
-
-
+    // const [state, setState] = useState({ message: null});
 
 
 
@@ -21,14 +20,21 @@ export default function App() {
             <Navbar />
             <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/psychometric" element={<Psychometric />} />
+                    <Route path="/" element={<Home state />} />
+                    <Route path="/psychometric" element={
+                        <>
+                            <Psychometric />
+                            <WordPuzzle />
+                            <MathPuzzle />
+                        </>
+                    } />
+                    <Route path='/dummy' element={<h1>Dummy</h1>} />
                 </Routes>
             </BrowserRouter>
             {/* <Home/>
       <Psychometric/> */}
 
-            <Footer/>
+            <Footer />
 
 
         </>

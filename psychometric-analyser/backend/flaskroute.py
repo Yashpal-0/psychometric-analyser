@@ -5,10 +5,10 @@ app =  Flask(__name__)
 CORS(app)
 
 response ={
-    "message" : False,
+    "eligible" : False,
 }
 # app.run(debug=True)
 @app.route('/', methods=['GET','POST'])
 def hello():
     # print(request.get_json())
-    return request.get_json()
+    return response

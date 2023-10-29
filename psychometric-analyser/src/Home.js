@@ -1,53 +1,69 @@
-import React, { PureComponent , useState } from 'react'
+import React, { PureComponent, useState } from 'react'
 import home2 from './home2.gif'
+import { useNavigate } from 'react-router-dom';
+
 
 export default function Home() {
-
-    const [formData, setFormData] = useState({ linkedin : '', twitter : '' });
+    const navigate = useNavigate();
+    const [formData, setFormData] = useState({ linkedin: '', twitter: '' });
     const [finalData, setFinalData] = useState({});
     const [response, setResponse] = useState({});
+    const [state, setState] = useState({ eligible: true});
 
-  const handleChangeLinkedIn = (e) => {
-    setFormData({ ...formData, linkedin: e.target.value });
-  };
+    const handleChangeLinkedIn = (e) => {
+        setFormData({ ...formData, linkedin: e.target.value });
+    };
 
     const handleChangeTwitter = (e) => {
-     setFormData({ ...formData, twitter: e.target.value });
+        setFormData({ ...formData, twitter: e.target.value });
     };
 
     var isUrlValid = (e) => {
         return /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/.test(e);
     }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(formData)
-    
-    if(isUrlValid(formData.linkedin) && isUrlValid(formData.twitter)){
-        // console.log("Valid link");
-        //send data to backend
-        var url = "http://127.0.0.1:5000/";
-        await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(finalData),
-        }).then(res =>  res.json()).then(data => setResponse(data)).catch(err => console.log(err))    ;
-    }
-    else{
-        console.log()
-        console.log("Invalid link");
-    }
-    //if form data is validd
-    //send data to backend
-    //else
-    //show error message
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        // console.log(formData)
 
-    
-  };
-    
-        return (
+        if (isUrlValid(formData.linkedin) && isUrlValid(formData.twitter)) {
+            // console.log("Valid link");
+            //send data to backend
+            var url = "http://127.0.0.1:5000/";
+            await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(finalData),
+            }).then(res =>
+                res.json()
+            ).then(data => {
+                setResponse(data)
+                console.log(data)
+                if (state.eligible == false) {
+                    console.log("Ineligible candidate")
+                    navigate('/dummy');
+                }
+                else if (state.eligible == true) {
+                    console.log("Eligible candidate")
+                    navigate('/psychometric');
+                }
+            }).catch(err => console.log(err));
+        }
+        else {
+            console.log("Invalid link");
+        }
+        //if form data is validd
+        //send data to backend
+        //else
+        //show error message
+
+
+    };
+
+    return (
+        <>
             <div className='container container-fluid mb-5'>
                 <h3 className='display-3 fw-bold mt-5'>Talent Insight Accelerator</h3>
                 <hr />
@@ -83,11 +99,11 @@ export default function Home() {
                         <div className='row'>
 
                             <div className='col-6'>
-                                <input type="url" id="typeURL" className="form-control" placeholder='LinkedIn profile link' name="linkedin" onChange={handleChangeLinkedIn} value={formData.linkedin}/>
+                                <input type="url" id="typeURL" className="form-control" placeholder='LinkedIn profile link' name="linkedin" onChange={handleChangeLinkedIn} value={formData.linkedin} />
                             </div>
 
                             <div className='col-6'>
-                                <input type="url" id="typeURL" className="form-control" placeholder='Twitter profile link' name = "twitter" onChange={handleChangeTwitter} value={formData.twitter}/>
+                                <input type="url" id="typeURL" className="form-control" placeholder='Twitter profile link' name="twitter" onChange={handleChangeTwitter} value={formData.twitter} />
                             </div>
 
                         </div>
@@ -98,6 +114,7 @@ export default function Home() {
 
                 </div>
             </div>
-        )
-    }
+        </>
+    )
+}
 

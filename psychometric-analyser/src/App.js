@@ -5,11 +5,12 @@ import Navbar from './Navbar';
 import Psychometric from './Psychometric';
 import WordPuzzle from './WordPuzzle';
 import MathPuzzle from './MathPuzzle';
+// import {Navigate} from 'react-router-dom';
 
 export default function App() {
   
 
-
+// const [state, setState] = useState({ message: null});
 
 
 
@@ -20,8 +21,15 @@ export default function App() {
       <Navbar/>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/psychometric" element={<Psychometric/>}/>
+          <Route path="/" element={<Home state/>}/>
+          <Route path="/psychometric" element={
+            <>
+          <Psychometric/>
+          <WordPuzzle/>
+          <MathPuzzle/>
+          </>
+          }/>
+          <Route path='/dummy' element={<h1>Dummy</h1>}/>
         </Routes>
       </BrowserRouter>
       {/* <Home/>

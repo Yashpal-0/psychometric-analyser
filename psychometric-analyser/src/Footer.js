@@ -8,7 +8,7 @@ export default class Footer extends PureComponent {
                 <footer className="bg-dark text-center text-lg-start mt-5 pt-2">
                     <div className="text-center text-light p-3">
                         © 2023 Copyright:
-                        <a className="text-light" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+                        <a className="text-light" href=""> KonnectNXT</a>
                     </div>
                 </footer>
             </div>

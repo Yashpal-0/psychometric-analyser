@@ -23,7 +23,7 @@ export default class Psychometric extends Component {
                 </div>
 
                 <div>
-                    <h5 className='fw-light mt-5'>Q2. How do you typically respond to rejection or failure in your work? Are you more likely to persist, adapt, and find alternative solutions, or do you tend to reevaluate your strategy and adjust your approach as needed?</h5>
+                    <h5 className='fw-light mt-5'>Q3. How do you stay inspired, organized, and creative in your work, even when faced with tight deadlines?</h5>
                     <div className="form mb-4">
                         <textarea className="form-control" id="form4Example3" rows="4" style={{ "resize": "None" }}></textarea>
                     </div>
@@ -31,7 +31,7 @@ export default class Psychometric extends Component {
 
 
                 <div>
-                    <h5 className='fw-light mt-5'>Q2. How do you typically respond to rejection or failure in your work? Are you more likely to persist, adapt, and find alternative solutions, or do you tend to reevaluate your strategy and adjust your approach as needed?</h5>
+                    <h5 className='fw-light mt-5'>Q4. How did you present a proposal or idea to a group? How did you ensure it was well-received?</h5>
                     <div className="form mb-4">
                         <textarea className="form-control" id="form4Example3" rows="4" style={{ "resize": "None" }}></textarea>
                     </div>
@@ -39,7 +39,7 @@ export default class Psychometric extends Component {
 
 
                 <div>
-                    <h5 className='fw-light mt-5'>Q2. How do you typically respond to rejection or failure in your work? Are you more likely to persist, adapt, and find alternative solutions, or do you tend to reevaluate your strategy and adjust your approach as needed?</h5>
+                    <h5 className='fw-light mt-5'>Q5. How would you work with a cross-functional team to deliver a project or achieve a goal? How will you contribute to the team's success?</h5>
                     <div className="form mb-4">
                         <textarea className="form-control" id="form4Example3" rows="4" style={{ "resize": "None" }}></textarea>
                     </div>

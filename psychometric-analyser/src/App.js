@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Home from './Home';
 import Psychometric from './Psychometric';
-import Navbar from './Navbar';
+import WordPuzzle from './WordPuzzle';
+import MathPuzzle from './MathPuzzle';
 
 export default function App() {
   
